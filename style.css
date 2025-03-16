@@ -1,0 +1,20 @@
+body{
+    background-color: #23222a;
+}
+h1{
+    color: white;
+}
+label{
+    padding: 0.5rem;
+    color:white;
+}
+#kuldes{
+    border-radius: 10px;
+    padding: 0.2rem;
+}
+#urlap{
+    background-color: grey;
+}
+img{
+    width: 100%;
+}
