@@ -1,9 +1,8 @@
 body{
     background-color: #23222a;
-}
-h1{
     color: white;
 }
+
 label{
     padding: 0.5rem;
     color:white;
@@ -17,4 +16,8 @@ label{
 }
 img{
     width: 100%;
+}
+#pSpawn, #pSpawnMax{
+    width: 100px;
+    margin: 0.2rem;
 }
