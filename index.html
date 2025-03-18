@@ -7,12 +7,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <link href="style.css" rel="stylesheet"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="col-lg-6 col-md-6 col-sm-6 mx-auto">
         <img src="gamedevklub-logo-horizontal-2.png" alt="">
     </div>
-    <h1 class="d-flex justify-content-center">Timecat opciók</h1>
+    <h1 class="d-flex justify-content-center" id="cim">Timecat opciók</h1>
     <div class="row mx-auto">
         <div class="col-lg-3">
             <h1>A csapat</h1>
@@ -23,23 +24,23 @@
                 <label for="sor">Sorok száma:</label>
                 <input type="number" name="rows" id="sor" value="6"><br>
                 <label for="oszlop">Oszlopok száma:</label>
-                <input type="number" name="rows" id="oszlop" value="10"><br>
+                <input type="number" name="cols" id="oszlop" value="10"><br>
                 <h2>A játékosok beállításai:</h2>
                 <label for="hp">Játékosok élete:</label>
                 <input type="number" name="pl_health" id="hp" value="30"><br>
                 <label for="speed">Játékosok sebessége:</label>
-                <input type="number" name="pl_speed" id="speed" value="100"><br>
+                <input type="number" name="pl_speed" id="speed" value="110"><br>
                 <label for="slowed">Lassított játékosok sebessége:</label>
-                <input type="number" name="pl_speed_slow" id="slowed" value="70"><br>
+                <input type="number" name="pl_speed_slow" id="slowed" value="80"><br>
                 <h2>A lövedékek beállításai:</h2>
                 <label for="projectile">Lövedékek sebessége:</label>
                 <input type="number" name="pr_speed" id="projectile" value="150"><br>
                 <label for="pGyorsul">Lövedékek gyorsulási sebessége:</label>
-                <input type="number" name="pr_speed_increase" id="pGyorsul" value="10"><br>
+                <input type="number" name="pr_speed_increase" id="pGyorsul" value="20"><br>
                 <label for="pMax">Lövedékek maximum sebessége:</label>
-                <input type="number" name="pr_speed_max" id="pMax" value="300"><br>
+                <input type="number" name="pr_speed_max" id="pMax" value="400"><br>
                 <label for="pSpawn">Lövedékek megjelenésének gyakorisága:</label>
-                <input type="number" name="pr_spawn_time_min" id="pSpawn" min="20" max="90" placeholder="minimum"><input type="number" name="pr_spawn_time_max" id="pSpawnMax" min="30" max="100" placeholder="maximum"><br>
+                <input type="number" name="pr_spawn_time_min" id="pSpawn" min="2" max="4" placeholder="minimum"><input type="number" name="pr_spawn_time_max" id="pSpawnMax" min="2" max="4" placeholder="maximum"><br>
                 <input type="submit" value="Indítás" id="kuldes">
             </form>
         </div>

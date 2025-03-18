@@ -1,11 +1,13 @@
 body{
     background-color: #23222a;
-    color: white;
+    color: #ffffff;
+    font-family: "Press Start 2P";
 }
 
 label{
     padding: 0.5rem;
     color:white;
+    font-size: 12px;
 }
 #kuldes{
     border-radius: 10px;
@@ -20,4 +22,24 @@ img{
 #pSpawn, #pSpawnMax{
     width: 100px;
     margin: 0.2rem;
+}
+h1{
+    font-size: 20px;
+}
+#cim{
+    margin: 2rem;
+}
+h2{
+    font-size: 16px;
+    padding: 0.2rem;
+}
+input{
+    max-width: 150px;
+    float: right;
+}
+#kuldes{
+    float: left;
+}
+#pSpawn, #pSpawnMax{
+    font-size: 12px;
 }
