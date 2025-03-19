@@ -8,6 +8,35 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <link href="style.css" rel="stylesheet"></script>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script>
+        async function beallitas() {
+            try{
+                const response = await fetch("https://jatekok.gamedevklub.hu/TimeCat/config.json");
+                if(!response.ok){
+                    console.log("Hiba");
+                }
+                const data = await response.json();
+                console.log(data.rows);
+                document.getElementById("sor").value = data.rows;
+                document.getElementById("oszlop").value = data.cols;
+                document.getElementById("hp").value = data.pl_health;
+                document.getElementById("speed").value = data.pl_speed;
+                document.getElementById("slowed").value = data.pl_speed_slow;
+                document.getElementById("projectile").value = data.pr_speed;
+                document.getElementById("pGyorsul").value = data.pr_speed_increase;
+                document.getElementById("pMax").value = data.pr_speed_max;
+                document.getElementById("pSpawn").value = data.pr_spawn_time_min;
+                document.getElementById("pSpawn").max = data.pr_spawn_time_max;
+                document.getElementById("pSpawnMax").value = data.pr_spawn_time_max;
+                document.getElementById("pSpawnMax").max = data.pr_spawn_time_max + 5;
+                document.getElementById("pSpawnMax").min = data.pr_spawn_time_max;
+            }
+            catch(e){
+                console.log(e);
+            } 
+        }
+        beallitas();
+    </script>
 </head>
 <body>
     <div class="col-lg-6 col-md-6 col-sm-6 mx-auto">
@@ -22,25 +51,25 @@
             <form action="https://jatekok.gamedevklub.hu/TimeCat/" target="_blank">
                 <h2>A pálya beállításai:</h2>
                 <label for="sor">Sorok száma:</label>
-                <input type="number" name="rows" id="sor" value="6"><br>
+                <input type="number" name="rows" id="sor"><br>
                 <label for="oszlop">Oszlopok száma:</label>
-                <input type="number" name="cols" id="oszlop" value="10"><br>
+                <input type="number" name="cols" id="oszlop"><br>
                 <h2>A játékosok beállításai:</h2>
                 <label for="hp">Játékosok élete:</label>
-                <input type="number" name="pl_health" id="hp" value="30"><br>
+                <input type="number" name="pl_health" id="hp"><br>
                 <label for="speed">Játékosok sebessége:</label>
-                <input type="number" name="pl_speed" id="speed" value="110"><br>
+                <input type="number" name="pl_speed" id="speed"><br>
                 <label for="slowed">Lassított játékosok sebessége:</label>
-                <input type="number" name="pl_speed_slow" id="slowed" value="80"><br>
+                <input type="number" name="pl_speed_slow" id="slowed"><br>
                 <h2>A lövedékek beállításai:</h2>
                 <label for="projectile">Lövedékek sebessége:</label>
-                <input type="number" name="pr_speed" id="projectile" value="150"><br>
+                <input type="number" name="pr_speed" id="projectile"><br>
                 <label for="pGyorsul">Lövedékek gyorsulási sebessége:</label>
-                <input type="number" name="pr_speed_increase" id="pGyorsul" value="20"><br>
+                <input type="number" name="pr_speed_increase" id="pGyorsul"><br>
                 <label for="pMax">Lövedékek maximum sebessége:</label>
-                <input type="number" name="pr_speed_max" id="pMax" value="400"><br>
+                <input type="number" name="pr_speed_max" id="pMax"><br>
                 <label for="pSpawn">Lövedékek megjelenésének gyakorisága:</label>
-                <input type="number" name="pr_spawn_time_min" id="pSpawn" min="2" max="4" placeholder="minimum"><input type="number" name="pr_spawn_time_max" id="pSpawnMax" min="2" max="4" placeholder="maximum"><br>
+                <input type="number" name="pr_spawn_time_max" id="pSpawnMax" placeholder="maximum"><input type="number" name="pr_spawn_time_min" id="pSpawn" min="0" placeholder="minimum"><br>
                 <input type="submit" value="Indítás" id="kuldes">
             </form>
         </div>
