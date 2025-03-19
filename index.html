@@ -16,20 +16,10 @@
                     console.log("Hiba");
                 }
                 const data = await response.json();
-                console.log(data.rows);
-                document.getElementById("sor").value = data.rows;
-                document.getElementById("oszlop").value = data.cols;
-                document.getElementById("hp").value = data.pl_health;
-                document.getElementById("speed").value = data.pl_speed;
-                document.getElementById("slowed").value = data.pl_speed_slow;
-                document.getElementById("projectile").value = data.pr_speed;
-                document.getElementById("pGyorsul").value = data.pr_speed_increase;
-                document.getElementById("pMax").value = data.pr_speed_max;
-                document.getElementById("pSpawn").value = data.pr_spawn_time_min;
-                document.getElementById("pSpawn").max = data.pr_spawn_time_max;
-                document.getElementById("pSpawnMax").value = data.pr_spawn_time_max;
-                document.getElementById("pSpawnMax").max = data.pr_spawn_time_max + 5;
-                document.getElementById("pSpawnMax").min = data.pr_spawn_time_max;
+                for(var key in data){
+                    var value = data[key];
+                    document.getElementById(key).value = value;
+                }
             }
             catch(e){
                 console.log(e);
@@ -51,25 +41,25 @@
             <form action="https://jatekok.gamedevklub.hu/TimeCat/" target="_blank">
                 <h2>A pálya beállításai:</h2>
                 <label for="sor">Sorok száma:</label>
-                <input type="number" name="rows" id="sor"><br>
+                <input type="number" name="rows" id="rows"><br>
                 <label for="oszlop">Oszlopok száma:</label>
-                <input type="number" name="cols" id="oszlop"><br>
+                <input type="number" name="cols" id="cols"><br>
                 <h2>A játékosok beállításai:</h2>
                 <label for="hp">Játékosok élete:</label>
-                <input type="number" name="pl_health" id="hp"><br>
+                <input type="number" name="pl_health" id="pl_health"><br>
                 <label for="speed">Játékosok sebessége:</label>
-                <input type="number" name="pl_speed" id="speed"><br>
+                <input type="number" name="pl_speed" id="pl_speed"><br>
                 <label for="slowed">Lassított játékosok sebessége:</label>
-                <input type="number" name="pl_speed_slow" id="slowed"><br>
+                <input type="number" name="pl_speed_slow" id="pl_speed_slow"><br>
                 <h2>A lövedékek beállításai:</h2>
                 <label for="projectile">Lövedékek sebessége:</label>
-                <input type="number" name="pr_speed" id="projectile"><br>
+                <input type="number" name="pr_speed" id="pr_speed"><br>
                 <label for="pGyorsul">Lövedékek gyorsulási sebessége:</label>
-                <input type="number" name="pr_speed_increase" id="pGyorsul"><br>
+                <input type="number" name="pr_speed_increase" id="pr_speed_increase"><br>
                 <label for="pMax">Lövedékek maximum sebessége:</label>
-                <input type="number" name="pr_speed_max" id="pMax"><br>
+                <input type="number" name="pr_speed_max" id="pr_speed_max"><br>
                 <label for="pSpawn">Lövedékek megjelenésének gyakorisága:</label>
-                <input type="number" name="pr_spawn_time_max" id="pSpawnMax" placeholder="maximum"><input type="number" name="pr_spawn_time_min" id="pSpawn" min="0" placeholder="minimum"><br>
+                <input type="number" name="pr_spawn_time_max" id="pr_spawn_time_max" placeholder="maximum"><input type="number" name="pr_spawn_time_min" id="pr_spawn_time_min" min="0" placeholder="minimum"><br>
                 <input type="submit" value="Indítás" id="kuldes">
             </form>
         </div>

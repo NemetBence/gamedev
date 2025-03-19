@@ -12,6 +12,7 @@ label{
 #kuldes{
     border-radius: 10px;
     padding: 0.2rem;
+    float: left;
 }
 #urlap{
     background-color: grey;
@@ -19,9 +20,10 @@ label{
 img{
     width: 100%;
 }
-#pSpawn, #pSpawnMax{
+#pr_spawn_time_min, #pr_spawn_time_max{
     width: 100px;
     margin: 0.2rem;
+    font-size: 12px;
 }
 h1{
     font-size: 20px;
@@ -36,10 +38,4 @@ h2{
 input{
     max-width: 150px;
     float: right;
-}
-#kuldes{
-    float: left;
-}
-#pSpawn, #pSpawnMax{
-    font-size: 12px;
 }
