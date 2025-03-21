@@ -46,20 +46,20 @@
                 <input type="number" name="cols" id="cols" min="2" max="16"><br>
                 <h2>A játékosok beállításai:</h2>
                 <label for="hp">Játékosok élete:</label>
-                <input type="number" name="pl_health" id="pl_health"><br>
+                <input type="number" name="pl_health" id="pl_health" min="20"><br>
                 <label for="speed">Játékosok sebessége:</label>
-                <input type="number" name="pl_speed" id="pl_speed"><br>
+                <input type="number" name="pl_speed" id="pl_speed" min="80"><br>
                 <label for="slowed">Lassított játékosok sebessége:</label>
-                <input type="number" name="pl_speed_slow" id="pl_speed_slow"><br>
+                <input type="number" name="pl_speed_slow" id="pl_speed_slow" min="40"><br>
                 <h2>A lövedékek beállításai:</h2>
                 <label for="projectile">Lövedékek sebessége:</label>
-                <input type="number" name="pr_speed" id="pr_speed"><br>
+                <input type="number" name="pr_speed" id="pr_speed" min="30"><br>
                 <label for="pGyorsul">Lövedékek gyorsulási sebessége:</label>
-                <input type="number" name="pr_speed_increase" id="pr_speed_increase"><br>
+                <input type="number" name="pr_speed_increase" id="pr_speed_increase" min="0"><br>
                 <label for="pMax">Lövedékek maximum sebessége:</label>
-                <input type="number" name="pr_speed_max" id="pr_speed_max"><br>
+                <input type="number" name="pr_speed_max" id="pr_speed_max" min="30"><br>
                 <label for="pSpawn">Lövedékek megjelenésének gyakorisága:</label>
-                <input type="number" name="pr_spawn_time_max" id="pr_spawn_time_max" placeholder="maximum"><input type="number" name="pr_spawn_time_min" id="pr_spawn_time_min" min="0" placeholder="minimum"><br>
+                <input type="number" name="pr_spawn_time_max" id="pr_spawn_time_max" placeholder="maximum" min="0"><input type="number" name="pr_spawn_time_min" id="pr_spawn_time_min" min="0" placeholder="minimum"><br>
                 <input type="submit" value="Indítás" id="kuldes">
             </form>
         </div>
