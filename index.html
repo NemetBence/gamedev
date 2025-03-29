@@ -33,8 +33,36 @@
         <a href="https://gamedevklub.hu/"><img src="gamedevklub-logo-horizontal-2.png" alt=""></a>
     </div>
     <h1 class="d-flex justify-content-center" id="cim">Timecat opciók</h1>
-    <div class="row mx-auto">
-        <div class="col-lg-3">
+    <div class="row mx-auto">   
+        <div class="col-lg-9 col-md-9 col-sm-12" id="urlap">
+            <form action="https://jatekok.gamedevklub.hu/TimeCat/" target="_blank">
+                <h2>A pálya beállításai:</h2>
+                <label for="rows">Sorok száma:</label>
+                <input type="number" name="rows" id="rows" min="2" max="16"><br>
+                <label for="cols">Oszlopok száma:</label>
+                <input type="number" name="cols" id="cols" min="2" max="16"><br>
+                <label for="sy_opacity">Csempék átlátszósága:</label>
+                <input type="number" name="sy_opacity" id="sy_opacity" min="0" max="100"><br>
+                <h2>A játékosok beállításai:</h2>
+                <label for="pl_health">Élet:</label>
+                <input type="number" name="pl_health" id="pl_health" min="20"><br>
+                <label for="pl_speed">Sebesség:</label>
+                <input type="number" name="pl_speed" id="pl_speed" min="80"><br>
+                <label for="pl_speed_slow">Lassított sebesség:</label>
+                <input type="number" name="pl_speed_slow" id="pl_speed_slow" min="40"><br>
+                <h2>A lövedékek beállításai:</h2>
+                <label for="pr_speed">Sebesség:</label>
+                <input type="number" name="pr_speed" id="pr_speed" min="30"><br>
+                <label for="pr_speed_increase">Gyorsulás:</label>
+                <input type="number" name="pr_speed_increase" id="pr_speed_increase" min="0"><br>
+                <label for="pr_speed_max">Maximum sebesség:</label>
+                <input type="number" name="pr_speed_max" id="pr_speed_max" min="30"><br>
+                <label for="pr_spawn_time_max">Megjelenés gyakorisága:</label>
+                <input type="number" name="pr_spawn_time_max" id="pr_spawn_time_max" placeholder="maximum" min="0"><input type="number" name="pr_spawn_time_min" id="pr_spawn_time_min" min="0" placeholder="minimum"><br>
+                <input type="submit" value="Indítás" id="kuldes">
+            </form>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6">
             <h1>A csapat</h1>
             <ul>
                 <li>Fodi - kód + weblap</li>
@@ -46,35 +74,6 @@
                 <li>Matyi - tester</li>
             </ul>
         </div>
-        <div class="col-lg-9" id="urlap">
-            <form action="https://jatekok.gamedevklub.hu/TimeCat/" target="_blank">
-                <h2>A pálya beállításai:</h2>
-                <label for="rows">Sorok száma:</label>
-                <input type="number" name="rows" id="rows" min="2" max="16"><br>
-                <label for="cols">Oszlopok száma:</label>
-                <input type="number" name="cols" id="cols" min="2" max="16"><br>
-                <label for="sy_opacity">Csempék átlátszósága:</label>
-                <input type="number" name="sy_opacity" id="sy_opacity" min="0" max="100"><br>
-                <h2>A játékosok beállításai:</h2>
-                <label for="pl_health">Játékosok élete:</label>
-                <input type="number" name="pl_health" id="pl_health" min="20"><br>
-                <label for="pl_speed">Játékosok sebessége:</label>
-                <input type="number" name="pl_speed" id="pl_speed" min="80"><br>
-                <label for="pl_speed_slow">Lassított játékosok sebessége:</label>
-                <input type="number" name="pl_speed_slow" id="pl_speed_slow" min="40"><br>
-                <h2>A lövedékek beállításai:</h2>
-                <label for="pr_speed">Lövedékek sebessége:</label>
-                <input type="number" name="pr_speed" id="pr_speed" min="30"><br>
-                <label for="pr_speed_increase">Lövedékek gyorsulási sebessége:</label>
-                <input type="number" name="pr_speed_increase" id="pr_speed_increase" min="0"><br>
-                <label for="pr_speed_max">Lövedékek maximum sebessége:</label>
-                <input type="number" name="pr_speed_max" id="pr_speed_max" min="30"><br>
-                <label for="pr_spawn_time_max">Lövedékek megjelenésének gyakorisága:</label>
-                <input type="number" name="pr_spawn_time_max" id="pr_spawn_time_max" placeholder="maximum" min="0"><input type="number" name="pr_spawn_time_min" id="pr_spawn_time_min" min="0" placeholder="minimum"><br>
-                <input type="submit" value="Indítás" id="kuldes">
-            </form>
-        </div>
-        
     </div>
 </body>
 </html>
