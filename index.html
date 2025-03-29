@@ -16,9 +16,17 @@
                     console.log("Hiba");
                 }
                 const data = await response.json();
+                console.log("Az összes infó a json-ből:")
+                console.log(data)
                 for(var key in data){
                     var value = data[key];
+                    console.log("Adott inputmező megtalálása (legalábbis próbálja):")
+                    console.log(document.getElementById(key));
                     document.getElementById(key).value = value;
+                    /*if(document.getElementById(key) != null){
+                        document.getElementById(key).value = value;
+                    }*/
+                    
                 }
             }
             catch(e){
@@ -62,20 +70,26 @@
                 <input type="number" name="pr_spawn_time_max" id="pr_spawn_time_max" placeholder="maximum"><input type="number" name="pr_spawn_time_min" id="pr_spawn_time_min" min="0" placeholder="minimum"><br>
                 <h2>Itemek:</h2>
                 <label for="it_damage">Alap sebzés:</label>
-                <input type="number" name="it_damage" id="it_damage"><br>
+                <input type="number" name="it_damage" id="it_damage" min="1"><br>
                 <label for="it_attack_damage">"ATK" - Item sebzése:</label>
-                <input type="number" name="it_attack_damage" id="it_attack_damage"><br>
+                <input type="number" name="it_attack_damage" id="it_attack_damage" min="1"><br>
                 <label for="it_sleep_time">"SLEEP" - Alvás ideje:</label>
-                <input type="number" name="it_sleep_time" id="it_sleep_time"><br>
+                <input type="number" name="it_sleep_time" id="it_sleep_time" min="0"><br>
                 <label for="it_slow_time">"SLOW" - Lassítás ideje:</label>
-                <input type="number" name="it_slow_time" id="it_slow_time"><br>
+                <input type="number" name="it_slow_time" id="it_slow_time" min="0"><br>
+                <label for="it_slow_factor">"SLOW" - Lassítás mértéke:</label>
+                <input type="number" name="it_slow_factor" id="it_slow_factor" min="0"><br>
                 <h2>Ágyúk:</h2>
                 <label for="ca_health">Élet:</label>
-                <input type="number" name="ca_health" id="ca_health"><br>
+                <input type="number" name="ca_health" id="ca_health" min="1" max="100"><br>
                 <label for="ca_count_init">Kezdeti ágyúk száma:</label>
-                <input type="number" name="ca_count_init" id="ca_count_init"><br>
+                <input type="number" name="ca_count_init" id="ca_count_init" min="0" max="4"><br>
                 <label for="ca_count_max">Maximális ágyúk száma:</label>
-                <input type="number" name="ca_count_max" id="ca_count_max"><br>
+                <input type="number" name="ca_count_max" id="ca_count_max" min="4" max="100"><br>
+                <label for="ca_spawn_time_min">Új ágyú minimum megjelenése:</label>
+                <input type="number" name="ca_spawn_time_min" id="ca_spawn_time_min" min="0" max="30"><br>
+                <label for="ca_spawn_time_max">Új ágyú maximum megjelenése:</label>
+                <input type="number" name="ca_spawn_time_max" id="ca_spawn_time_max" min="30" max="60"><br>
                 <input type="submit" value="Indítás" id="kuldes">
             </form>
         </div>
