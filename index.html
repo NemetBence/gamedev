@@ -34,10 +34,7 @@
     </div>
     <h1 class="d-flex justify-content-center" id="cim">Timecat opciók</h1>
     <div class="row mx-auto">
-        <div class="col-lg-3">
-            <h1>A csapat</h1>
-        </div>
-        <div class="col-lg-6" id="urlap">
+        <div class="col-lg-9 col-md-12 col-sm-12" id="urlap">
             <form action="https://jatekok.gamedevklub.hu/TimeCat/" target="_blank">
                 <h2>A pálya beállításai:</h2>
                 <label for="rows">Sorok száma:</label>
@@ -47,20 +44,20 @@
                 <label for="sy_opacity">Csempék átlátszósága:</label>
                 <input type="number" name="sy_opacity" id="sy_opacity" min="0" max="100"><br>
                 <h2>A játékosok beállításai:</h2>
-                <label for="hp">Játékosok élete:</label>
+                <label for="hp">Élet:</label>
                 <input type="number" name="pl_health" id="pl_health"><br>
-                <label for="speed">Játékosok sebessége:</label>
+                <label for="speed">Sebesség:</label>
                 <input type="number" name="pl_speed" id="pl_speed"><br>
-                <label for="slowed">Lassított játékosok sebessége:</label>
+                <label for="slowed">Lassított sebesség:</label>
                 <input type="number" name="pl_speed_slow" id="pl_speed_slow"><br>
                 <h2>A lövedékek beállításai:</h2>
-                <label for="projectile">Lövedékek sebessége:</label>
+                <label for="projectile">Sebesség:</label>
                 <input type="number" name="pr_speed" id="pr_speed"><br>
-                <label for="pGyorsul">Lövedékek gyorsulási sebessége:</label>
+                <label for="pGyorsul">Gyorsulás:</label>
                 <input type="number" name="pr_speed_increase" id="pr_speed_increase"><br>
-                <label for="pMax">Lövedékek maximum sebessége:</label>
+                <label for="pMax">Maximum sebesség:</label>
                 <input type="number" name="pr_speed_max" id="pr_speed_max"><br>
-                <label for="pSpawn">Lövedékek megjelenésének gyakorisága:</label>
+                <label for="pSpawn">Megjelenés gyakorisága:</label>
                 <input type="number" name="pr_spawn_time_max" id="pr_spawn_time_max" placeholder="maximum"><input type="number" name="pr_spawn_time_min" id="pr_spawn_time_min" min="0" placeholder="minimum"><br>
                 <input type="submit" value="Indítás" id="kuldes">
             </form>
