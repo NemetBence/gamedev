@@ -41,59 +41,67 @@
         <a href="https://gamedevklub.hu/"><img src="gamedevklub-logo-horizontal-2.png" alt=""></a>
     </div>
     <h1 class="d-flex justify-content-center" id="cim">Timecat opciók</h1>
-    <div class="row mx-auto container">
-        <div class="col-lg-3 col-md-2"></div>
-        <div class="col-lg-6 col-md-10 col-sm-12" id="urlap">
-            <form action="https://jatekok.gamedevklub.hu/TimeCat/" target="_blank">
-                <h2>Pálya:</h2>
-                <label for="rows">Sorok száma:</label>
-                <input type="number" name="rows" id="rows" min="2" max="16"><br>
-                <label for="cols">Oszlopok száma:</label>
-                <input type="number" name="cols" id="cols" min="2" max="16"><br>
-                <label for="sy_opacity">Csempék átlátszósága:</label>
-                <input type="number" name="sy_opacity" id="sy_opacity" min="0" max="100"><br>
-                <h2>Játékosok:</h2>
-                <label for="hp">Élet:</label>
-                <input type="number" name="pl_health" id="pl_health"><br>
-                <label for="speed">Sebesség:</label>
-                <input type="number" name="pl_speed" id="pl_speed"><br>
-                <label for="slowed">Lassított sebesség:</label>
-                <input type="number" name="pl_speed_slow" id="pl_speed_slow"><br>
-                <h2>Lövedékek:</h2>
-                <label for="projectile">Sebesség:</label>
-                <input type="number" name="pr_speed" id="pr_speed"><br>
-                <label for="pGyorsul">Gyorsulás:</label>
-                <input type="number" name="pr_speed_increase" id="pr_speed_increase"><br>
-                <label for="pMax">Maximum sebesség:</label>
-                <input type="number" name="pr_speed_max" id="pr_speed_max"><br>
-                <label for="pSpawn">Megjelenés gyakorisága:</label>
-                <input type="number" name="pr_spawn_time_max" id="pr_spawn_time_max" placeholder="maximum"><input type="number" name="pr_spawn_time_min" id="pr_spawn_time_min" min="0" placeholder="minimum"><br>
-                <h2>Itemek:</h2>
-                <label for="it_damage">Alap sebzés:</label>
-                <input type="number" name="it_damage" id="it_damage" min="1"><br>
-                <label for="it_attack_damage">"ATK" - Item sebzése:</label>
-                <input type="number" name="it_attack_damage" id="it_attack_damage" min="1"><br>
-                <label for="it_sleep_time">"SLEEP" - Alvás ideje:</label>
-                <input type="number" name="it_sleep_time" id="it_sleep_time" min="0"><br>
-                <label for="it_slow_time">"SLOW" - Lassítás ideje:</label>
-                <input type="number" name="it_slow_time" id="it_slow_time" min="0"><br>
-                <label for="it_slow_factor">"SLOW" - Lassítás mértéke:</label>
-                <input type="number" name="it_slow_factor" id="it_slow_factor" min="0"><br>
-                <h2>Ágyúk:</h2>
-                <label for="ca_health">Élet:</label>
-                <input type="number" name="ca_health" id="ca_health" min="1" max="100"><br>
-                <label for="ca_count_init">Kezdeti ágyúk száma:</label>
-                <input type="number" name="ca_count_init" id="ca_count_init" min="0" max="4"><br>
-                <label for="ca_count_max">Maximális ágyúk száma:</label>
-                <input type="number" name="ca_count_max" id="ca_count_max" min="4" max="100"><br>
-                <label for="ca_spawn_time_min">Új ágyú minimum megjelenése:</label>
-                <input type="number" name="ca_spawn_time_min" id="ca_spawn_time_min" min="0" max="30"><br>
-                <label for="ca_spawn_time_max">Új ágyú maximum megjelenése:</label>
-                <input type="number" name="ca_spawn_time_max" id="ca_spawn_time_max" min="30" max="60"><br>
+    <div class="container">
+        <form action="https://jatekok.gamedevklub.hu/TimeCat/" target="_blank"></form>
+            <div class="row" id="urlap">          
+                <div class="col-lg-6">
+                    <h2>Pálya:</h2>
+                    <label for="rows">Sorok száma:</label>
+                    <input type="number" name="rows" id="rows" min="2" max="16"><br>
+                    <label for="cols">Oszlopok száma:</label>
+                    <input type="number" name="cols" id="cols" min="2" max="16"><br>
+                    <label for="sy_opacity">Csempék átlátszósága:</label>
+                    <input type="number" name="sy_opacity" id="sy_opacity" min="0" max="100"><br>
+                    <h2>Játékosok:</h2>
+                    <label for="hp">Élet:</label>
+                    <input type="number" name="pl_health" id="pl_health"><br>
+                    <label for="speed">Sebesség:</label>
+                    <input type="number" name="pl_speed" id="pl_speed"><br>
+                    <label for="slowed">Lassított sebesség:</label>
+                    <input type="number" name="pl_speed_slow" id="pl_speed_slow"><br>
+                    <h2>Lövedékek:</h2>
+                    <label for="projectile">Sebesség:</label>
+                    <input type="number" name="pr_speed" id="pr_speed"><br>
+                    <label for="pGyorsul">Gyorsulás:</label>
+                    <input type="number" name="pr_speed_increase" id="pr_speed_increase"><br>
+                    <label for="pMax">Maximum sebesség:</label>
+                    <input type="number" name="pr_speed_max" id="pr_speed_max"><br>
+                    <label for="pSpawn">Megjelenés gyakorisága:</label>
+                    <input type="number" name="pr_spawn_time_max" id="pr_spawn_time_max" placeholder="maximum"><input type="number" name="pr_spawn_time_min" id="pr_spawn_time_min" min="0" placeholder="minimum">
+                </div>
+                <div class="col-lg-6">
+                    <h2>Itemek:</h2>
+                    <label for="it_damage">Alap sebzés:</label>
+                    <input type="number" name="it_damage" id="it_damage" min="1"><br>
+                    <label for="it_attack_damage">"ATK" - Item sebzése:</label>
+                    <input type="number" name="it_attack_damage" id="it_attack_damage" min="1"><br>
+                    <label for="it_sleep_time">"SLEEP" - Alvás ideje:</label>
+                    <input type="number" name="it_sleep_time" id="it_sleep_time" min="0"><br>
+                    <label for="it_slow_time">"SLOW" - Lassítás ideje:</label>
+                    <input type="number" name="it_slow_time" id="it_slow_time" min="0"><br>
+                    <label for="it_slow_factor">"SLOW" - Lassítás mértéke:</label>
+                    <input type="number" name="it_slow_factor" id="it_slow_factor" min="0" step="any"><br>
+                    <h2>Ágyúk:</h2>
+                    <label for="ca_health">Élet:</label>
+                    <input type="number" name="ca_health" id="ca_health" min="1" max="100"><br>
+                    <label for="ca_count_init">Kezdeti ágyúk száma:</label>
+                    <input type="number" name="ca_count_init" id="ca_count_init" min="0" max="4"><br>
+                    <label for="ca_count_max">Maximális ágyúk száma:</label>
+                    <input type="number" name="ca_count_max" id="ca_count_max" min="4" max="100"><br>
+                    <label for="ca_spawn_time_min">Új ágyú minimum megjelenése:</label>
+                    <input type="number" name="ca_spawn_time_min" id="ca_spawn_time_min" min="0" max="30"><br>
+                    <label for="ca_spawn_time_max">Új ágyú maximum megjelenése:</label>
+                    <input type="number" name="ca_spawn_time_max" id="ca_spawn_time_max" min="30" max="60"><br>
+                </div> 
+            </div>
+            <div class="row" id="urlap">
                 <input type="submit" value="Indítás" id="kuldes">
-            </form>
-        </div>
-        <div class="col-lg-3 col-sm-6 mx-auto">
+            </div> 
+        </form>    
+    </div>
+    
+    <div class="row mx-auto container credit">
+        <div class="col-lg-4 col-sm-4 mx-auto">
             <h1>A csapat</h1>
             <ul>
                 <li>Fodi - kód + weblap</li>
