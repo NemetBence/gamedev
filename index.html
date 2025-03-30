@@ -16,16 +16,9 @@
                     console.log("Hiba");
                 }
                 const data = await response.json();
-                console.log("Az összes infó a json-ből:")
-                console.log(data)
                 for(var key in data){
                     var value = data[key];
-                    console.log("Adott inputmező megtalálása (legalábbis próbálja):")
-                    console.log(document.getElementById(key));
                     document.getElementById(key).value = value;
-                    /*if(document.getElementById(key) != null){
-                        document.getElementById(key).value = value;
-                    }*/
                     
                 }
             }
@@ -42,7 +35,7 @@
     </div>
     <h1 class="d-flex justify-content-center" id="cim">Timecat opciók</h1>
     <div class="container">
-        <form action="https://jatekok.gamedevklub.hu/TimeCat/" target="_blank"></form>
+        <form action="https://jatekok.gamedevklub.hu/TimeCat/" target="_blank">
             <div class="row" id="urlap">          
                 <div class="col-lg-6">
                     <h2>Pálya:</h2>
