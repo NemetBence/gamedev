@@ -40,7 +40,7 @@ h2{
 input{
     max-width: 150px;
     float: right;
-    margin: 0.15rem 0rem;
+    margin: 0.15rem 0rem 0rem 0.15rem;
     border-radius: 0.5rem;
 }
 li{
