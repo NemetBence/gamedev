@@ -1,5 +1,7 @@
 body{
-    background-color: #23222a;
+/*    background-color: #23222a;*/
+    background-image: url("background.png");
+    image-rendering: pixelated;
     color: #ffffff;
     font-family: "Press Start 2P";
 }
@@ -11,10 +13,19 @@ label{
     margin-left: 10%;
 }
 #kuldes{
+    background-image: url("ButtonNemBenyomva.png");
+    background-repeat: no-repeat;
+    background-size: 200px 100px;
+    background-position: center;
+    image-rendering: crisp-edges;
     border-radius: 10px;
     padding: 0.2rem;
-    width: 200px;
+    width: 199px;
+    height: 99px;
     margin: 1rem auto;
+}
+#kuldes:hover:active{
+    background-image: url("ButtonBenyomva.png");
 }
 #urlap{
     background-color: grey;
@@ -32,6 +43,9 @@ h1{
 }
 #cim{
     margin: 2rem;
+}
+#alcim{
+    text-align: center;
 }
 h2{
     font-size: 16px;
