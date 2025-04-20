@@ -19,7 +19,10 @@
                 for(var key in data){
                     var value = data[key];
                     var elem = document.getElementById(key)
-                    elem.value = value;
+                    if(elem != null){
+                        elem.value = value;
+                    }
+                    
                 }
             }
             catch(e){
@@ -45,6 +48,8 @@
                     <input type="number" name="cols" id="cols" min="2" max="16"><br>
                     <label for="sy_opacity">Csempék átlátszósága:</label>
                     <input type="number" name="sy_opacity" id="sy_opacity" min="0" max="100"><br>
+                    <label for="gap_percent">Csempe kihagyás esélye:</label>
+                    <input type="number" name="gap_percent" id="gap_percent" min="0" max="100"><br>
                     <h2>Játékosok:</h2>
                     <label for="pl_health">Élet:</label>
                     <input type="number" name="pl_health" id="pl_health" min="1"><br>

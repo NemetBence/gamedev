@@ -24,7 +24,7 @@ label{
     height: 99px;
     margin: 1rem auto;
 }
-#kuldes:hover:active{
+#kuldes:active{
     background-image: url("ButtonBenyomva.png");
 }
 #urlap{
