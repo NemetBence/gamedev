@@ -21,6 +21,8 @@
                     const elem = document.getElementById(key)
                     if(elem != null){
                         elem.value = value;
+                    } else {
+                        console.warn("Unsupported parameter: " + key)
                     }
                     
                 }
