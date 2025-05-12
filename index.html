@@ -21,6 +21,8 @@
                     const elem = document.getElementById(key)
                     if(elem != null){
                         elem.value = value;
+                    }else{
+                        console.warn("Unsupported parameter: " + key);
                     }
                     
                 }
@@ -37,10 +39,10 @@
         <a href="https://gamedevklub.hu/"><img src="GDKTC5x.png" alt=""></a>
     </div>
     <h1 class="d-flex justify-content-center" id="cim">Timecat opciók</h1>
-    <div class="container">
+    <div class="opciok">
         <form action="https://jatekok.gamedevklub.hu/TimeCat/" target="_blank">
             <div class="row" id="urlap">          
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                     <h2>Pálya:</h2>
                     <label for="rows">Sorok száma:</label>
                     <input type="number" name="rows" id="rows" min="2" max="16"><br>
@@ -48,11 +50,17 @@
                     <input type="number" name="cols" id="cols" min="2" max="16"><br>
                     <label for="sy_opacity">Csempék átlátszósága:</label>
                     <input type="number" name="sy_opacity" id="sy_opacity" min="0" max="100"><br>
+                    <label for="sy_ratio">Csempék gyakorisága:</label>
+                    <input type="number" name="sy_ratio" id="sy_ratio" min="0" max="100"><br>
                     <label for="gap_percent">Csempe kihagyás esélye:</label>
                     <input type="number" name="gap_percent" id="gap_percent" min="0" max="100"><br>
                     <h2>Játékosok:</h2>
                     <label for="pl_health">Élet:</label>
                     <input type="number" name="pl_health" id="pl_health" min="1"><br>
+                    <label for="pl_health_drain">Csökkenése minden mp-ben:</label>
+                    <input type="number" name="pl_health_drain" id="pl_health_drain" min="1"><br>
+                    <label for="pl_heal_pair">Egy pár után kapott élet:</label>
+                    <input type="number" name="pl_heal_pair" id="pl_heal_pair" min="1"><br>
                     <label for="pl_speed">Sebesség:</label>
                     <input type="number" name="pl_speed" id="pl_speed" min="1"><br>
                     <label for="pl_speed_slow">Lassított sebesség:</label>
@@ -64,21 +72,38 @@
                     <input type="number" name="pr_speed_increase" id="pr_speed_increase" min="0"><br>
                     <label for="pr_speed_max">Maximum sebesség:</label>
                     <input type="number" name="pr_speed_max" id="pr_speed_max" min="1"><br>
-                    <label for="pr_spawn_time_max">Megjelenés gyakorisága:</label>
-                    <input type="number" name="pr_spawn_time_max" id="pr_spawn_time_max" placeholder="maximum" min="0"><input type="number" name="pr_spawn_time_min" id="pr_spawn_time_min" min="0" placeholder="minimum">
+                    <label for="pr_spawn_time_max">Megjelenés gyakorisága:</label><br>
+                    <label for="pr_spawn_time_min" class="behuzott">Minimum (mp-ben) -</label>
+                    <input type="number" name="pr_spawn_time_min" id="pr_spawn_time_min" min="0" placeholder="minimum">
+                    <label for="pr_spawn_time_max" class="behuzott">Maximum (mp-ben) -</label>
+                    <input type="number" name="pr_spawn_time_max" id="pr_spawn_time_max" placeholder="maximum" min="0">
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                     <h2>Itemek:</h2>
                     <label for="it_damage">Alap sebzés:</label>
                     <input type="number" name="it_damage" id="it_damage" min="1"><br>
+                    <label for="it_speed">Eldobott item sebessége:</label>
+                    <input type="number" name="it_speed" id="it_speed" min="1"><br>
+                    <label for="pl_heal_item">"HEAL" item után járó élet:</label>
+                    <input type="number" name="pl_heal_item" id="pl_heal_item" min="1"><br>
                     <label for="it_attack_damage">"ATK" - Item sebzése:</label>
                     <input type="number" name="it_attack_damage" id="it_attack_damage" min="1"><br>
+                    <label for="it_attack_ratio">"ATK" - Item gyakorisága:</label>
+                    <input type="number" name="it_attack_ratio" id="it_attack_ratio" min="0"><br>
+                    <label for="it_shield_ratio">"SHIELD" - Item gyakorisága:</label>
+                    <input type="number" name="it_shield_ratio" id="it_shield_ratio" min="0"><br>
                     <label for="it_sleep_time">"SLEEP" - Alvás ideje:</label>
                     <input type="number" name="it_sleep_time" id="it_sleep_time" min="1"><br>
+                    <label for="it_sleep_ratio">"SLEEP" - Item gyakorisága:</label>
+                    <input type="number" name="it_sleep_ratio" id="it_sleep_ratio" min="0"><br>
                     <label for="it_slow_time">"SLOW" - Lassítás ideje:</label>
                     <input type="number" name="it_slow_time" id="it_slow_time" min="1"><br>
                     <label for="it_slow_factor">"SLOW" - Lassítás mértéke:</label>
                     <input type="number" name="it_slow_factor" id="it_slow_factor" min="0" step="any"><br>
+                    <label for="it_slow_ratio">"SLOW" - Item gyakorisága:</label>
+                    <input type="number" name="it_slow_ratio" id="it_slow_ratio" min="1"><br>
+                </div>
+                <div class="col-lg-4">
                     <h2>Ágyúk:</h2>
                     <label for="ca_health">Élet:</label>
                     <input type="number" name="ca_health" id="ca_health" min="1"><br>
@@ -86,10 +111,15 @@
                     <input type="number" name="ca_count_init" id="ca_count_init" min="0"><br>
                     <label for="ca_count_max">Maximális ágyúk száma:</label>
                     <input type="number" name="ca_count_max" id="ca_count_max" min="0"><br>
-                    <label for="ca_spawn_time_min">Új ágyú minimum megjelenése:</label>
+                    <label for="ca_spawn_time_max">Új ágyú megjelenése:</label><br>
+                    <label for="ca_spawn_time_min" class="behuzott">Minimum (mp-ben) -</label>
                     <input type="number" name="ca_spawn_time_min" id="ca_spawn_time_min" min="0"><br>
-                    <label for="ca_spawn_time_max">Új ágyú maximum megjelenése:</label>
+                    <label for="ca_spawn_time_max" class="behuzott">Maximum (mp-ben) -</label>
                     <input type="number" name="ca_spawn_time_max" id="ca_spawn_time_max" min="0"><br>
+                    <label for="ca_accel">Gyorsulás mértéke:</label>
+                    <input type="number" name="ca_accel" id="ca_accel" min="1"><br>
+                    <label for="ca_speed_max">Maximális sebesség</label>
+                    <input type="number" name="ca_speed_max" id="ca_speed_max" min="1"><br>
                 </div> 
             </div>
             <div class="row" id="urlap">

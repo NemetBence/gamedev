@@ -12,6 +12,12 @@ label{
     font-size: 12px;
     margin-left: 10%;
 }
+.behuzott{
+    padding: 0.5rem;
+    color:white;
+    font-size: 12px;
+    margin-left: 20%;
+}
 #kuldes{
     background-image: url("ButtonNemBenyomva.png");
     background-repeat: no-repeat;
@@ -52,7 +58,7 @@ h2{
     padding: 0.2rem;
 }
 input{
-    max-width: 150px;
+    max-width: 80px;
     float: right;
     margin: 0.15rem 0rem 0rem 0.15rem;
     border-radius: 0.5rem;
@@ -62,4 +68,11 @@ li{
 }
 .credit{
     margin-top: 2rem;
+}
+.opciok{
+    width: 95%;
+    margin: auto
+}
+.col-lg-4{
+    padding: 10px;
 }
