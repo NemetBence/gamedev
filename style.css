@@ -57,7 +57,7 @@ h2{
     padding: 0.2rem;
 }
 input{
-    max-width: 80px;
+    width: 80px;
     float: right;
     margin: 0.15rem 0rem 0rem 0.15rem;
     border-radius: 0.5rem;
@@ -74,4 +74,7 @@ li{
 }
 .col-lg-4{
     padding: 10px;
+}
+#title{
+    text-align: center;
 }
