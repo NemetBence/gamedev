@@ -13,9 +13,9 @@
     <link href="style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <script>
-        async function beallitas() {
+        async function beallitas(url) {
             try {
-                const response = await fetch("https://jatekok.gamedevklub.hu/TimeCat/config.json");
+                const response = await fetch(url);
                 if (!response.ok) {
                     console.log("Hiba");
                 }
@@ -35,7 +35,7 @@
                 console.log(e);
             }
         }
-        beallitas();
+        beallitas("https://jatekok.gamedevklub.hu/TimeCat/config.json");
     </script>
 </head>
 
@@ -44,6 +44,7 @@
         <a href="https://gamedevklub.hu/"><img src="GDKTC5x.png" alt=""></a>
     </div>
     <h1 class="d-flex justify-content-center" id="cim">Timecat opciók</h1>
+    <div class="col-lg-4"><button onclick="beallitas(`https://jatekok.gamedevklub.hu/TimeCat/config.json`)">Alap beállítások</button></div>
     <div class="opciok">
         <form action="https://jatekok.gamedevklub.hu/TimeCat/" target="_blank">
             <div class="row" id="urlap">
@@ -72,6 +73,8 @@
                     <input type="number" name="pl_health_drain" id="pl_health_drain" min="1"><br>
                     <label for="pl_heal_pair">Egy pár után kapott élet:</label>
                     <input type="number" name="pl_heal_pair" id="pl_heal_pair" min="1"><br>
+                    <label for="pl_health_low">Figyelmeztetés ekkor (HP):</label>
+                    <input type="number" name="pl_health_low" id="pl_health_low" min="1"><br>
                     <label for="pl_speed">Sebesség:</label>
                     <input type="number" name="pl_speed" id="pl_speed" min="1"><br>
                     <label for="pl_speed_slow">Lassított sebesség:</label>
@@ -79,40 +82,44 @@
                     <h2>Lövedékek:</h2>
                     <label for="pr_speed">Sebesség:</label>
                     <input type="number" name="pr_speed" id="pr_speed" min="1"><br>
+                    <label for="pr_damage">Sebzés:</label>
+                    <input type="number" name="pr_damage" id="pr_damage" min="1"><br>
                     <label for="pr_speed_increase">Gyorsulás:</label>
                     <input type="number" name="pr_speed_increase" id="pr_speed_increase" min="0"><br>
                     <label for="pr_speed_max">Maximum sebesség:</label>
                     <input type="number" name="pr_speed_max" id="pr_speed_max" min="1"><br>
                     <label for="pr_spawn_time_max">Megjelenés gyakorisága:</label><br>
                     <label for="pr_spawn_time_min" class="behuzott">Minimum (mp-ben) -</label>
-                    <input type="number" name="pr_spawn_time_min" id="pr_spawn_time_min" min="0" placeholder="minimum">
+                    <input type="number" name="pr_spawn_time_min" id="pr_spawn_time_min" min="0" step="any" placeholder="minimum">
                     <label for="pr_spawn_time_max" class="behuzott">Maximum (mp-ben) -</label>
-                    <input type="number" name="pr_spawn_time_max" id="pr_spawn_time_max" placeholder="maximum" min="0">
+                    <input type="number" name="pr_spawn_time_max" id="pr_spawn_time_max" placeholder="maximum" min="0" step="any">
                 </div>
                 <div class="col-lg-4">
                     <h2>Itemek:</h2>
                     <label for="it_damage">Alap sebzés:</label>
                     <input type="number" name="it_damage" id="it_damage" min="1"><br>
-                    <label for="it_speed">Eldobott item sebessége:</label>
+                    <label for="it_speed">Sebeség eldobásnál:</label>
                     <input type="number" name="it_speed" id="it_speed" min="1"><br>
-                    <label for="pl_heal_item">"HEAL" item után járó élet:</label>
-                    <input type="number" name="pl_heal_item" id="pl_heal_item" min="1"><br>
-                    <label for="it_attack_damage">"ATK" - Item sebzése:</label>
-                    <input type="number" name="it_attack_damage" id="it_attack_damage" min="1"><br>
-                    <label for="it_attack_ratio">"ATK" - Gyakorisága:</label>
-                    <input type="number" name="it_attack_ratio" id="it_attack_ratio" min="0"><br>
-                    <label for="it_shield_ratio">"SHIELD" - Gyakorisága:</label>
-                    <input type="number" name="it_shield_ratio" id="it_shield_ratio" min="0"><br>
-                    <label for="it_sleep_time">"SLEEP" - Alvás ideje:</label>
-                    <input type="number" name="it_sleep_time" id="it_sleep_time" min="1"><br>
-                    <label for="it_sleep_ratio">"SLEEP" - Gyakorisága:</label>
-                    <input type="number" name="it_sleep_ratio" id="it_sleep_ratio" min="0"><br>
-                    <label for="it_slow_time">"SLOW" - Lassítás ideje:</label>
-                    <input type="number" name="it_slow_time" id="it_slow_time" min="1"><br>
-                    <label for="it_slow_factor">"SLOW" - Lassítás mértéke:</label>
-                    <input type="number" name="it_slow_factor" id="it_slow_factor" min="0" step="any"><br>
-                    <label for="it_slow_ratio">"SLOW" - Gyakorisága:</label>
-                    <input type="number" name="it_slow_ratio" id="it_slow_ratio" min="1"><br>
+                    <label for="pl_heal_item"><img src="sziv_atlatszo.png" class="ikonok"> Után járó élet:</label>
+                    <input type="number" name="pl_heal_item" id="pl_heal_item" min="1" style="margin-top: 20px"><br>
+                    <label for="it_attack_damage"><img src="atk_atlatszo.png" class="ikonok"> Sebzése:</label>
+                    <input type="number" name="it_attack_damage" id="it_attack_damage" min="1" style="margin-top: 20px"><br>
+                    <label for="it_attack_ratio"><img src="atk_atlatszo.png" class="ikonok"> Gyakorisága:</label>
+                    <input type="number" name="it_attack_ratio" id="it_attack_ratio" min="0" style="margin-top: 20px"><br>
+                    <label for="it_shield_time"><img src="shield_atlatszo.png" class="ikonok"> Ideje:</label>
+                    <input type="number" name="it_shield_time" id="it_shield_time" min="1" style="margin-top: 20px"><br>
+                    <label for="it_shield_ratio"><img src="shield_atlatszo.png" alt="" class="ikonok"> Gyakorisága:</label>
+                    <input type="number" name="it_shield_ratio" id="it_shield_ratio" min="0" style="margin-top: 20px"><br>
+                    <label for="it_sleep_time"><img src="sleep_atlatszo.png" class="ikonok"> ideje:</label>
+                    <input type="number" name="it_sleep_time" id="it_sleep_time" min="1" style="margin-top: 10px"><br>
+                    <label for="it_sleep_ratio"><img src="sleep_atlatszo.png" class="ikonok"> Gyakorisága:</label>
+                    <input type="number" name="it_sleep_ratio" id="it_sleep_ratio" min="0" style="margin-top: 10px"><br>
+                    <label for="it_slow_time"><img src="slow_atlatszo.png" class="ikonok"> Ideje:</label>
+                    <input type="number" name="it_slow_time" id="it_slow_time" min="1" style="margin-top: 10px"><br>
+                    <label for="it_slow_factor"><img src="slow_atlatszo.png" class="ikonok"> Mértéke:</label>
+                    <input type="number" name="it_slow_factor" id="it_slow_factor" min="0" step="any" style="margin-top: 10px"><br>
+                    <label for="it_slow_ratio"><img src="slow_atlatszo.png" class="ikonok"> Gyakorisága:</label>
+                    <input type="number" name="it_slow_ratio" id="it_slow_ratio" min="1" style="margin-top: 10px"><br>
                 </div>
                 <div class="col-lg-4">
                     <h2>Ágyúk:</h2>
