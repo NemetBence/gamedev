@@ -18,7 +18,7 @@ label{
     font-size: 12px;
     margin-left: 4rem;
 }
-#kuldes{
+.kuldes{
     background-image: url("ButtonNemBenyomva.png");
     background-repeat: no-repeat;
     background-size: 200px 100px;
@@ -30,7 +30,7 @@ label{
     height: 99px;
     margin: 1rem auto;
 }
-#kuldes:active{
+.kuldes:active{
     background-image: url("ButtonBenyomva.png");
 }
 #urlap{

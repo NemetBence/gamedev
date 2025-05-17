@@ -43,17 +43,29 @@
     <div class="col-lg-6 col-md-6 col-sm-6 mx-auto">
         <a href="."><img src="GDKTC5x.png" alt=""></a>
     </div>
-    <h1 class="d-flex justify-content-center" id="cim">Timecat opciók</h1>
-    <div class="col-lg-4">
-        <button onclick="beallitas(`https://jatekok.gamedevklub.hu/TimeCat/original.json`)">Lövöldözős 9x7</button>
-        <button onclick="beallitas(`https://jatekok.gamedevklub.hu/TimeCat/original.json`)">Lövöldözős 12x6</button>
-        <button onclick="beallitas(`https://jatekok.gamedevklub.hu/TimeCat/chill4x4.json`)">Nyugis 4x4</button>
-        <button onclick="beallitas(`https://jatekok.gamedevklub.hu/TimeCat/chill8x8.json`)">Nyugis 8x8</button>
-    </div>
-    <div class="opciok">
-        <form action="https://jatekok.gamedevklub.hu/TimeCat/" target="_blank">
+    <form action="https://jatekok.gamedevklub.hu/TimeCat/" target="_blank">
+        <h1 class="d-flex justify-content-center" id="cim">Játékmódok</h1>
+        <div class="row">
+            <div class="col-lg-12 text-center mb-2">
+                <button type="button"
+                    onclick="beallitas(`https://jatekok.gamedevklub.hu/TimeCat/original.json`)">Lövöldözős
+                    9x7</button>
+                <button type="button"
+                    onclick="beallitas(`https://jatekok.gamedevklub.hu/TimeCat/original.json`)">Lövöldözős
+                    12x6</button>
+                <button type="button" onclick="beallitas(`https://jatekok.gamedevklub.hu/TimeCat/chill4x4.json`)">Nyugis
+                    4x4</button>
+                <button type="button" onclick="beallitas(`https://jatekok.gamedevklub.hu/TimeCat/chill8x8.json`)">Nyugis
+                    8x8</button>
+            </div>
+            <div class="col-lg-12 text-center mb-5 d-flex justify-content-center">
+                <input type="submit" value="Indítás" class="kuldes">
+            </div>
+        </div>
+        <div class="opciok">
+
             <div class="row" id="urlap">
-                <input type="submit" value="Indítás" id="kuldes">
+                <h1 class="d-flex justify-content-center" id="cim">Testreszabás</h1>
             </div>
             <div class="row" id="urlap">
                 <div class="col-lg-12">
@@ -100,9 +112,11 @@
                     <input type="number" name="pr_speed_max" id="pr_speed_max" min="1" step="any"><br>
                     <label for="pr_spawn_time_max">Megjelenés gyakorisága:</label><br>
                     <label for="pr_spawn_time_min" class="behuzott">Minimum (mp-ben) -</label>
-                    <input type="number" name="pr_spawn_time_min" id="pr_spawn_time_min" min="0" step="any" placeholder="minimum">
+                    <input type="number" name="pr_spawn_time_min" id="pr_spawn_time_min" min="0" step="any"
+                        placeholder="minimum">
                     <label for="pr_spawn_time_max" class="behuzott">Maximum (mp-ben) -</label>
-                    <input type="number" name="pr_spawn_time_max" id="pr_spawn_time_max" placeholder="maximum" min="0" step="any">
+                    <input type="number" name="pr_spawn_time_max" id="pr_spawn_time_max" placeholder="maximum" min="0"
+                        step="any">
                 </div>
                 <div class="col-lg-4">
                     <h2>Itemek:</h2>
@@ -111,23 +125,29 @@
                     <label for="it_speed">Sebeség eldobásnál:</label>
                     <input type="number" name="it_speed" id="it_speed" min="1" step="any"><br>
                     <label for="pl_heal_item"><img src="sziv_atlatszo.png" class="ikonok"> Után járó élet:</label>
-                    <input type="number" name="pl_heal_item" id="pl_heal_item" min="1" step="any" style="margin-top: 20px"><br>
+                    <input type="number" name="pl_heal_item" id="pl_heal_item" min="1" step="any"
+                        style="margin-top: 20px"><br>
                     <label for="it_attack_damage"><img src="atk_atlatszo.png" class="ikonok"> Sebzése:</label>
-                    <input type="number" name="it_attack_damage" id="it_attack_damage" min="1" step="any" style="margin-top: 20px"><br>
+                    <input type="number" name="it_attack_damage" id="it_attack_damage" min="1" step="any"
+                        style="margin-top: 20px"><br>
                     <!--<label for="it_attack_ratio"><img src="atk_atlatszo.png" class="ikonok"> Gyakorisága:</label>
                     <input type="number" name="it_attack_ratio" id="it_attack_ratio" min="0" step="any" style="margin-top: 20px"><br>-->
                     <label for="it_shield_time"><img src="shield_atlatszo.png" class="ikonok"> Ideje:</label>
-                    <input type="number" name="it_shield_time" id="it_shield_time" min="1" step="any" style="margin-top: 20px"><br>
+                    <input type="number" name="it_shield_time" id="it_shield_time" min="1" step="any"
+                        style="margin-top: 20px"><br>
                     <!--<label for="it_shield_ratio"><img src="shield_atlatszo.png" alt="" class="ikonok"> Gyakorisága:</label>
                     <input type="number" name="it_shield_ratio" id="it_shield_ratio" min="0" step="any" style="margin-top: 20px"><br>-->
                     <label for="it_sleep_time"><img src="sleep_atlatszo.png" class="ikonok"> ideje:</label>
-                    <input type="number" name="it_sleep_time" id="it_sleep_time" min="1" step="any" style="margin-top: 10px"><br>
+                    <input type="number" name="it_sleep_time" id="it_sleep_time" min="1" step="any"
+                        style="margin-top: 10px"><br>
                     <!--<label for="it_sleep_ratio"><img src="sleep_atlatszo.png" class="ikonok"> Gyakorisága:</label>
                     <input type="number" name="it_sleep_ratio" id="it_sleep_ratio" min="0" step="any" style="margin-top: 10px"><br>-->
                     <label for="it_slow_time"><img src="slow_atlatszo.png" class="ikonok"> Ideje:</label>
-                    <input type="number" name="it_slow_time" id="it_slow_time" min="1" step="any" style="margin-top: 10px"><br>
+                    <input type="number" name="it_slow_time" id="it_slow_time" min="1" step="any"
+                        style="margin-top: 10px"><br>
                     <label for="it_slow_factor"><img src="slow_atlatszo.png" class="ikonok"> Mértéke:</label>
-                    <input type="number" name="it_slow_factor" id="it_slow_factor" min="0" step="any" style="margin-top: 10px"><br>
+                    <input type="number" name="it_slow_factor" id="it_slow_factor" min="0" step="any"
+                        style="margin-top: 10px"><br>
                     <!--<label for="it_slow_ratio"><img src="slow_atlatszo.png" class="ikonok"> Gyakorisága:</label>
                     <input type="number" name="it_slow_ratio" id="it_slow_ratio" min="1" step="any" style="margin-top: 10px"><br>-->
                 </div>
@@ -151,10 +171,10 @@
                 </div>
             </div>
             <div class="row" id="urlap">
-                <input type="submit" value="Indítás" id="kuldes">
+                <input type="submit" value="Indítás" class="kuldes">
             </div>
-        </form>
-    </div>
+        </div>
+    </form>
     <div class="row mx-auto container credit">
         <h1 id="alcim">A csapat</h1>
         <div class="col-lg-5 col-sm-5 mx-auto">
