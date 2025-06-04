@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <script>
         var Apiadatok = null
+        var Jelenlegilink = "https://jatekok.gamedevklub.hu/TimeCat/original.json";
         async function ApiFetch(url) {
             try {
                 const response = await fetch(url);
@@ -39,9 +40,10 @@
                     console.warn("Unsupported parameter: " + key);
                 }
             }
+            Jelenlegilink = url;
         }
         async function valtozas(mezo, link){
-            const mezohtml = document.getElementById(mezo)
+            const mezohtml = document.getElementById(mezo);
             var data = await ApiFetch(link);
             for(const key in data){
                 if(key == mezo){
@@ -54,7 +56,22 @@
                 }
             }
         }
-        beallitas("https://jatekok.gamedevklub.hu/TimeCat/original.json");
+
+        function inditas(){
+            var elements = document.getElementById("inputok").elements;
+            for(var i = 0, element; element = elements[i++];){
+                if(element.style.backgroundColor == "white"){
+                    element.disabled = true;
+                }
+            }
+            document.getElementById("inputok").submit();
+            for(var i = 0, element; element = elements[i++];){
+                if(element.disabled == true){
+                    element.disabled = false;
+                }
+            }
+        }
+        beallitas(Jelenlegilink);
     </script>
 </head>
 
@@ -70,7 +87,7 @@
             <img src="qr.png" alt="" class="img-fluid" style="border: 20px solid white;width:250px">
         </div>
     </div>
-    <form action="https://jatekok.gamedevklub.hu/TimeCat/" target="_blank">
+    <form action="https://jatekok.gamedevklub.hu/TimeCat/" target="_blank" id="inputok">
         <h1 class="d-flex justify-content-center mt-4" id="cim">Játékmódok</h1>
         <div class="row">
             <div class="col-lg-12 text-center mb-2">
@@ -88,7 +105,7 @@
                     8x8</button>
             </div>
             <div class="col-lg-12 text-center mb-2 d-flex justify-content-center">
-                <input type="submit" value="Indítás" class="kuldes">
+                <button type="button" class="kuldes" onclick=inditas()>Indítás</button>
             </div>
         </div>
         <div class="opciok">
@@ -205,7 +222,7 @@
                 </div>
             </div>
             <div class="row urlap">
-                <input type="submit" value="Indítás" class="kuldes">
+                <button type="button" class="kuldes" onclick=inditas()>Indítás</button>
             </div>
         </div>
     </form>
