@@ -13,26 +13,45 @@
     <link href="style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <script>
-        async function beallitas(url) {
+        var Apiadatok = null
+        async function ApiFetch(url) {
             try {
                 const response = await fetch(url);
                 if (!response.ok) {
                     console.log("Hiba");
                 }
-                const data = await response.json();
-                for (const key in data) {
-                    const value = data[key];
-                    const elem = document.getElementById(key)
-                    if (elem != null) {
-                        elem.value = value;
-                    } else {
-                        console.warn("Unsupported parameter: " + key);
-                    }
-
-                }
+                return Apiadatok = await response.json();
             }
             catch (e) {
                 console.log(e);
+            }
+        }
+        async function beallitas(url){
+            var data = await ApiFetch(url);
+            for (const key in data) {
+                const value = data[key];
+                const elem = document.getElementById(key);
+                elem.onchange = function() {valtozas(key, url)}
+                if (elem != null) {
+                    elem.value = value;
+                    elem.style.backgroundColor = "white";
+                } else {
+                    console.warn("Unsupported parameter: " + key);
+                }
+            }
+        }
+        async function valtozas(mezo, link){
+            const mezohtml = document.getElementById(mezo)
+            var data = await ApiFetch(link);
+            for(const key in data){
+                if(key == mezo){
+                    if(mezohtml.value != data[key]){
+                        mezohtml.style.backgroundColor = "red";
+                    }
+                    else{
+                        mezohtml.style.backgroundColor = "white";
+                    }
+                }
             }
         }
         beallitas("https://jatekok.gamedevklub.hu/TimeCat/original.json");
@@ -74,10 +93,10 @@
         </div>
         <div class="opciok">
 
-            <div class="row" id="urlap">
+            <div class="row urlap">
                 <h1 class="d-flex justify-content-center my-4">Testreszabás</h1>
             </div>
-            <div class="row" id="urlap">
+            <div class="row urlap">
                 <div class="col-lg-12">
                     <label for="title" style="margin:0;text-align:center;width:100%">Felirat</label>
                 </div>
@@ -92,8 +111,8 @@
                     <input type="number" name="rows" id="rows" min="2" max="16"><br>
                     <label for="sy_opacity">Csempék átlátszósága (%):</label>
                     <input type="number" name="sy_opacity" id="sy_opacity" min="0" max="100"><br>
-                    <!--<label for="sy_ratio">Csempék gyakorisága:</label>
-                    <input type="number" name="sy_ratio" id="sy_ratio" min="0" max="100" step="any"><br>-->
+                    <label for="sy_ratio">Csempék gyakorisága:</label>
+                    <input type="number" name="sy_ratio" id="sy_ratio" min="0" max="100" step="any"><br>
                     <label for="gap_percent">Csempe kihagyás esélye (%):</label>
                     <input type="number" name="gap_percent" id="gap_percent" min="0" max="100"><br>
                     <label for="tile_time">Csempe záródás ideje:</label>
@@ -140,26 +159,26 @@
                     <label for="it_attack_damage"><img src="atk_atlatszo.png" class="ikonok"> Sebzése:</label>
                     <input type="number" name="it_attack_damage" id="it_attack_damage" min="1" step="any"
                         style="margin-top: 20px"><br>
-                    <!--<label for="it_attack_ratio"><img src="atk_atlatszo.png" class="ikonok"> Gyakorisága:</label>
-                    <input type="number" name="it_attack_ratio" id="it_attack_ratio" min="0" step="any" style="margin-top: 20px"><br>-->
+                    <label for="it_attack_ratio"><img src="atk_atlatszo.png" class="ikonok"> Gyakorisága:</label>
+                    <input type="number" name="it_attack_ratio" id="it_attack_ratio" min="0" step="any" style="margin-top: 20px"><br>
                     <label for="it_shield_time"><img src="shield_atlatszo.png" class="ikonok"> Ideje:</label>
                     <input type="number" name="it_shield_time" id="it_shield_time" min="1" step="any"
                         style="margin-top: 20px"><br>
-                    <!--<label for="it_shield_ratio"><img src="shield_atlatszo.png" alt="" class="ikonok"> Gyakorisága:</label>
-                    <input type="number" name="it_shield_ratio" id="it_shield_ratio" min="0" step="any" style="margin-top: 20px"><br>-->
+                    <label for="it_shield_ratio"><img src="shield_atlatszo.png" alt="" class="ikonok"> Gyakorisága:</label>
+                    <input type="number" name="it_shield_ratio" id="it_shield_ratio" min="0" step="any" style="margin-top: 20px"><br>
                     <label for="it_sleep_time"><img src="sleep_atlatszo.png" class="ikonok"> ideje:</label>
                     <input type="number" name="it_sleep_time" id="it_sleep_time" min="1" step="any"
                         style="margin-top: 10px"><br>
-                    <!--<label for="it_sleep_ratio"><img src="sleep_atlatszo.png" class="ikonok"> Gyakorisága:</label>
-                    <input type="number" name="it_sleep_ratio" id="it_sleep_ratio" min="0" step="any" style="margin-top: 10px"><br>-->
+                    <label for="it_sleep_ratio"><img src="sleep_atlatszo.png" class="ikonok"> Gyakorisága:</label>
+                    <input type="number" name="it_sleep_ratio" id="it_sleep_ratio" min="0" step="any" style="margin-top: 10px"><br>
                     <label for="it_slow_time"><img src="slow_atlatszo.png" class="ikonok"> Ideje:</label>
                     <input type="number" name="it_slow_time" id="it_slow_time" min="1" step="any"
                         style="margin-top: 10px"><br>
                     <label for="it_slow_factor"><img src="slow_atlatszo.png" class="ikonok"> Mértéke:</label>
                     <input type="number" name="it_slow_factor" id="it_slow_factor" min="0" step="any"
                         style="margin-top: 10px"><br>
-                    <!--<label for="it_slow_ratio"><img src="slow_atlatszo.png" class="ikonok"> Gyakorisága:</label>
-                    <input type="number" name="it_slow_ratio" id="it_slow_ratio" min="1" step="any" style="margin-top: 10px"><br>-->
+                    <label for="it_slow_ratio"><img src="slow_atlatszo.png" class="ikonok"> Gyakorisága:</label>
+                    <input type="number" name="it_slow_ratio" id="it_slow_ratio" min="1" step="any" style="margin-top: 10px"><br>
                 </div>
                 <div class="col-lg-4">
                     <h2>Ágyúk:</h2>
@@ -178,9 +197,14 @@
                     <input type="number" name="ca_accel" id="ca_accel" min="1" step="any"><br>
                     <label for="ca_speed_max">Maximális sebesség</label>
                     <input type="number" name="ca_speed_max" id="ca_speed_max" min="1" step="any"><br>
+                    <h2>Kamera:</h2>
+                    <label for="cam_move">Kamera mozgás:</label>
+                    <input type="number" name="cam_move" id="cam_move"><br>
+                    <label for="cam_rotate">Kamera forgás:</label>
+                    <input type="number" name="cam_rotate" id="cam_rotate">
                 </div>
             </div>
-            <div class="row" id="urlap">
+            <div class="row urlap">
                 <input type="submit" value="Indítás" class="kuldes">
             </div>
         </div>
