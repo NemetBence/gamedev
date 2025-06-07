@@ -13,8 +13,7 @@
     <link href="style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <script>
-        var Apiadatok = null
-        var Jelenlegilink = "https://jatekok.gamedevklub.hu/TimeCat/original.json";
+        let Apiadatok = null
         async function ApiFetch(url) {
             try {
                 const response = await fetch(url);
@@ -28,23 +27,23 @@
             }
         }
         async function beallitas(url){
-            var data = await ApiFetch(url);
+            let data = await ApiFetch(url);
             for (const key in data) {
                 const value = data[key];
                 const elem = document.getElementById(key);
-                elem.onchange = function() {valtozas(key, url)}
+                elem.oninput = function() {valtozas(key)}
                 if (elem != null) {
                     elem.value = value;
                     elem.style.backgroundColor = "white";
+                    valtozas(key);
                 } else {
                     console.warn("Unsupported parameter: " + key);
                 }
             }
-            Jelenlegilink = url;
         }
-        async function valtozas(mezo, link){
+        async function valtozas(mezo){
             const mezohtml = document.getElementById(mezo);
-            var data = await ApiFetch(link);
+            let data = await ApiFetch("https://jatekok.gamedevklub.hu/TimeCat/original.json");
             for(const key in data){
                 if(key == mezo){
                     if(mezohtml.value != data[key]){
@@ -58,20 +57,20 @@
         }
 
         function inditas(){
-            var elements = document.getElementById("inputok").elements;
-            for(var i = 0, element; element = elements[i++];){
+            let elements = document.getElementById("inputok").elements;
+            for(let i = 0, element; element = elements[i++];){
                 if(element.style.backgroundColor == "white"){
                     element.disabled = true;
                 }
             }
             document.getElementById("inputok").submit();
-            for(var i = 0, element; element = elements[i++];){
+            for(let i = 0, element; element = elements[i++];){
                 if(element.disabled == true){
                     element.disabled = false;
                 }
             }
         }
-        beallitas(Jelenlegilink);
+        beallitas("https://jatekok.gamedevklub.hu/TimeCat/original.json");
     </script>
 </head>
 
